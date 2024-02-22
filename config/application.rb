@@ -16,6 +16,8 @@ module Forum
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w(assets tasks))
 
+    config.action_controller.include_all_helpers = false
+    config.autoload_paths += %W(#{config.root}/app/helpers/subdirectory)
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
