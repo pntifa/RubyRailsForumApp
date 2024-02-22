@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #loginBtn button[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            margin: 10px auto;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        #loginBtn button[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        #registerBtn button[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            margin: 10px auto;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        #registerBtn button[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        
+        #signOutBtn {
+            display: none; /* Initially hide the sign-out button */
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, button {
+            width: 100% ;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Add styles for the modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .g-signin2 {
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+
+        #popupMessage {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+
+        @media screen and (min-width: 768px) {
+            header {
+                padding: 1em 2em; /* Increase padding for larger screens */
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            section {
+                padding: 30px; /* Increase padding for larger screens */
+            }
+        }
+    </style>
+</head>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="row">
+
+      <!-- Elements visible all the time -->
+      <div class="col-sm-7">
+        <%= render 'layouts/navigation/header' %>
+      </div><!-- col-sm-7 -->
+
+      <!-- Elements collapses on smaller devices -->
+      <div class="col-sm-5">
+        <%= render 'layouts/navigation/collapsible_elements' %>
+      </div><!-- col-sm-5 -->
+
+    </div><!-- row -->
+  </div><!-- container -->
+</nav>
