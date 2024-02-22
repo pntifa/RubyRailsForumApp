@@ -1572,3 +1572,41 @@ Processing by PagesController#index as HTML
 Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.9ms | Allocations: 8179)
 
 
+Started GET "/" for 127.0.0.1 at 2024-02-22 17:27:43 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 543)
+  Rendered layouts/navigation/_header.html.erb (Duration: 0.3ms | Allocations: 137)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/navigation_helper.rb:4:in `collapsible_links_partial_path'
+  Rendered layouts/navigation/collapsible_elements/_signed_in_links.html.erb (Duration: 0.7ms | Allocations: 407)
+  Rendered layouts/navigation/_collapsible_elements.html.erb (Duration: 78.7ms | Allocations: 21140)
+  Rendered layouts/_navigation.html.erb (Duration: 79.9ms | Allocations: 21845)
+  Rendered layout layouts/application.html.erb (Duration: 176.7ms | Allocations: 75278)
+Completed 200 OK in 187ms (Views: 169.7ms | ActiveRecord: 10.1ms | Allocations: 79629)
+
+
+Started GET "/" for 127.0.0.1 at 2024-02-22 17:28:22 +0200
+  
+LoadError (cannot load such file -- navigation_helper):
+  
+app/helpers/application_helper.rb:1:in `<main>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2024-02-22 17:28:41 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 454)
+  Rendered layouts/navigation/_header.html.erb (Duration: 0.3ms | Allocations: 130)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/navigation_helper.rb:4:in `collapsible_links_partial_path'
+  Rendered layouts/navigation/collapsible_elements/_signed_in_links.html.erb (Duration: 0.7ms | Allocations: 323)
+  Rendered layouts/navigation/_collapsible_elements.html.erb (Duration: 18.8ms | Allocations: 5413)
+  Rendered layouts/_navigation.html.erb (Duration: 20.1ms | Allocations: 6098)
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | Allocations: 29429)
+Completed 200 OK in 40ms (Views: 35.8ms | ActiveRecord: 3.3ms | Allocations: 30353)
+
+
