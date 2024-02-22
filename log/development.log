@@ -1610,3 +1610,85 @@ Processing by PagesController#index as HTML
 Completed 200 OK in 40ms (Views: 35.8ms | ActiveRecord: 3.3ms | Allocations: 30353)
 
 
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6851874718261121640)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreatePosts (20240222203636)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "content" text, "category_id" bigint, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_posts_on_category_id" ON "posts" ("category_id")[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240222203636') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20240222203706)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "branch" character varying)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240222203706') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6851874718261121640)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-02-22 23:39:00 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 543)
+  Rendered layouts/navigation/_header.html.erb (Duration: 0.2ms | Allocations: 137)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/navigation_helper.rb:4:in `collapsible_links_partial_path'
+  Rendered layouts/navigation/collapsible_elements/_signed_in_links.html.erb (Duration: 0.8ms | Allocations: 407)
+  Rendered layouts/navigation/_collapsible_elements.html.erb (Duration: 75.1ms | Allocations: 20665)
+  Rendered layouts/_navigation.html.erb (Duration: 76.3ms | Allocations: 21370)
+  Rendered layout layouts/application.html.erb (Duration: 202.7ms | Allocations: 75327)
+Completed 200 OK in 219ms (Views: 195.9ms | ActiveRecord: 13.4ms | Allocations: 79677)
+
+
+Started GET "/" for 127.0.0.1 at 2024-02-22 23:47:47 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layouts/navigation/_header.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/navigation_helper.rb:4:in `collapsible_links_partial_path'
+  Rendered layouts/navigation/collapsible_elements/_signed_in_links.html.erb (Duration: 0.7ms | Allocations: 99)
+  Rendered layouts/navigation/_collapsible_elements.html.erb (Duration: 14.3ms | Allocations: 3611)
+  Rendered layouts/_navigation.html.erb (Duration: 14.7ms | Allocations: 3747)
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 9706)
+Completed 200 OK in 26ms (Views: 21.0ms | ActiveRecord: 4.8ms | Allocations: 9962)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2024-02-22 23:47:59 +0200
+Processing by RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 227)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 16.7ms | Allocations: 3231)
+  Rendered layouts/navigation/_header.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/navigation/collapsible_elements/_signed_in_links.html.erb (Duration: 0.3ms | Allocations: 105)
+  Rendered layouts/navigation/_collapsible_elements.html.erb (Duration: 0.6ms | Allocations: 181)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 318)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 9338)
+Completed 200 OK in 46ms (Views: 38.0ms | ActiveRecord: 0.6ms | Allocations: 11919)
+
+
+Started GET "/post" for 127.0.0.1 at 2024-02-22 23:48:07 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/post"):
+  
+Started GET "/users/edit" for 127.0.0.1 at 2024-02-22 23:48:17 +0200
+Processing by RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1135)
+  Rendered layouts/navigation/_header.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/navigation/collapsible_elements/_signed_in_links.html.erb (Duration: 0.1ms | Allocations: 86)
+  Rendered layouts/navigation/_collapsible_elements.html.erb (Duration: 0.3ms | Allocations: 156)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 291)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 7307)
+Completed 200 OK in 22ms (Views: 13.6ms | ActiveRecord: 0.5ms | Allocations: 9057)
+
+
