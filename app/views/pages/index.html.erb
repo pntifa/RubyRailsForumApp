@@ -1,5 +1,5 @@
 <%= render 'posts/modal' %>
-<%= render @posts %>
+<%= render @posts if @posts.present? %>
 
 <div class="container">
   <div class="row">

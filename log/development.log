@@ -8974,3 +8974,552 @@ Processing by PostsController#hobby as HTML
 Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 1.2ms | Allocations: 17103)
 
 
+Started GET "/posts/hobby" for 127.0.0.1 at 2024-02-23 06:47:17 +0200
+Processing by PostsController#hobby as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/hobby.html.erb within layouts/application
+  Rendered posts/_modal.html.erb (Duration: 1.4ms | Allocations: 119)
+  Rendered posts/branch/create_new_post/_not_signed_in.html.erb (Duration: 0.7ms | Allocations: 184)
+  Rendered posts/branch/_create_new_post.html.erb (Duration: 2.8ms | Allocations: 720)
+  Rendered shared/_empty_partial.html.erb (Duration: 0.4ms | Allocations: 80)
+  Rendered posts/branch/_search_form.html.erb (Duration: 2.1ms | Allocations: 474)
+  Rendered posts/branch/categories/_all_selected.html.erb (Duration: 0.5ms | Allocations: 144)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."branch" = $1[0m  [["branch", "hobby"]]
+  ↳ app/views/posts/branch/_categories.html.erb:7
+  Rendered posts/branch/_categories.html.erb (Duration: 11.6ms | Allocations: 2903)
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "categories" ON "categories"."id" = "posts"."category_id" WHERE "categories"."branch" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["branch", "hobby"], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/posts/_branch.html.erb:19
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8)[0m  [["id", 8], ["id", 6], ["id", 3], ["id", 9], ["id", 2], ["id", 5], ["id", 4], ["id", 7]]
+  ↳ app/views/posts/_branch.html.erb:19
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.5ms | Allocations: 263)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.6ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 1.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.4ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered collection of posts/_post.html.erb [30 times] (Duration: 20.1ms | Allocations: 5500)
+  Rendered posts/_branch.html.erb (Duration: 58.9ms | Allocations: 20880)
+  Rendered posts/hobby.html.erb within layouts/application (Duration: 63.9ms | Allocations: 21386)
+  Rendered layout layouts/application.html.erb (Duration: 64.5ms | Allocations: 21478)
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 10.1ms | Allocations: 28170)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    17:   <div class="row">
+    18:         <div class="col-sm-12" id="feed">
+    19:         <%= render @posts %>
+    20:         <%= render no_posts_partial_path %>		
+    21:         </div>
+    22:   </div><!-- row -->	
+    23: 
+  
+app/helpers/posts_helper.rb:18:in `no_posts_partial_path'
+app/views/posts/_branch.html.erb:20
+app/views/posts/hobby.html.erb:2
+Started GET "/posts/hobby" for 127.0.0.1 at 2024-02-23 06:49:05 +0200
+Processing by PostsController#hobby as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/hobby.html.erb within layouts/application
+  Rendered posts/_modal.html.erb (Duration: 0.5ms | Allocations: 119)
+  Rendered posts/branch/create_new_post/_not_signed_in.html.erb (Duration: 0.4ms | Allocations: 184)
+  Rendered posts/branch/_create_new_post.html.erb (Duration: 1.5ms | Allocations: 720)
+  Rendered shared/_empty_partial.html.erb (Duration: 0.3ms | Allocations: 80)
+  Rendered posts/branch/_search_form.html.erb (Duration: 1.5ms | Allocations: 474)
+  Rendered posts/branch/categories/_all_selected.html.erb (Duration: 1.0ms | Allocations: 144)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."branch" = $1[0m  [["branch", "hobby"]]
+  ↳ app/views/posts/branch/_categories.html.erb:7
+  Rendered posts/branch/_categories.html.erb (Duration: 46.7ms | Allocations: 2907)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "categories" ON "categories"."id" = "posts"."category_id" WHERE "categories"."branch" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["branch", "hobby"], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/posts/_branch.html.erb:19
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8)[0m  [["id", 8], ["id", 6], ["id", 3], ["id", 9], ["id", 2], ["id", 5], ["id", 4], ["id", 7]]
+  ↳ app/views/posts/_branch.html.erb:19
+  Rendered posts/post/_branch_page.html.erb (Duration: 1.4ms | Allocations: 263)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.4ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered collection of posts/_post.html.erb [30 times] (Duration: 32.8ms | Allocations: 5500)
+  Rendered shared/_empty_partial.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mPost Count (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" INNER JOIN "categories" ON "categories"."id" = "posts"."category_id" WHERE "categories"."branch" = $1[0m  [["branch", "hobby"]]
+  ↳ app/views/posts/_branch.html.erb:25
+  Rendered posts/_branch.html.erb (Duration: 136.1ms | Allocations: 21887)
+  Rendered posts/hobby.html.erb within layouts/application (Duration: 138.3ms | Allocations: 22392)
+  Rendered layouts/navigation/_header.html.erb (Duration: 0.3ms | Allocations: 126)
+  Rendered layouts/navigation/collapsible_elements/_non_signed_in_links.html.erb (Duration: 0.5ms | Allocations: 159)
+  Rendered layouts/navigation/_collapsible_elements.html.erb (Duration: 1.1ms | Allocations: 425)
+  Rendered layouts/_navigation.html.erb (Duration: 2.2ms | Allocations: 954)
+  Rendered layout layouts/application.html.erb (Duration: 1704.0ms | Allocations: 90567)
+Completed 200 OK in 1740ms (Views: 1658.7ms | ActiveRecord: 61.9ms | Allocations: 94935)
+
+
+Started GET "/" for 127.0.0.1 at 2024-02-23 06:49:14 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered posts/_modal.html.erb (Duration: 0.1ms | Allocations: 11)
+  Rendered pages/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1376)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1468)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2430)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    1: <%= render 'posts/modal' %>
+    2: <%= render @posts %>
+    3: 
+    4: <div class="container">
+    5:   <div class="row">
+  
+app/views/pages/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2024-02-23 06:50:02 +0200
+  
+SyntaxError (/home/bluu/forum/app/helpers/posts_helper.rb:41: syntax error, unexpected end-of-input):
+  
+app/helpers/posts_helper.rb:41: syntax error, unexpected end-of-input
+app/helpers/application_helper.rb:3:in `<module:ApplicationHelper>'
+app/helpers/application_helper.rb:1:in `<main>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2024-02-23 06:50:58 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered posts/_modal.html.erb (Duration: 0.3ms | Allocations: 119)
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1373)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 1465)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.9ms | Allocations: 5695)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    1: <%= render 'posts/modal' %>
+    2: <%= render @posts %>
+    3: 
+    4: <div class="container">
+    5:   <div class="row">
+  
+app/views/pages/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2024-02-23 06:52:38 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered posts/_modal.html.erb (Duration: 1.0ms | Allocations: 119)
+  Rendered pages/index/side_menu/_no_login_required_links.html.erb (Duration: 1.3ms | Allocations: 362)
+  Rendered pages/index/_side_menu.html.erb (Duration: 2.9ms | Allocations: 607)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "categories" ON "categories"."id" = "posts"."category_id" WHERE "categories"."branch" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["branch", "hobby"], ["LIMIT", 8]]
+  ↳ app/views/pages/index/_main_content.html.erb:4
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 8], ["id", 6], ["id", 3], ["id", 9]]
+  ↳ app/views/pages/index/_main_content.html.erb:4
+  Rendered posts/post/_home_page.html.erb (Duration: 0.8ms | Allocations: 191)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.2ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.2ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered collection of posts/_post.html.erb [8 times] (Duration: 6.2ms | Allocations: 1821)
+  Rendered shared/_empty_partial.html.erb (Duration: 0.7ms | Allocations: 80)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "categories" ON "categories"."id" = "posts"."category_id" WHERE "categories"."branch" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["branch", "study"], ["LIMIT", 8]]
+  ↳ app/views/pages/index/_main_content.html.erb:10
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4, $5)[0m  [["id", 8], ["id", 2], ["id", 9], ["id", 4], ["id", 7]]
+  ↳ app/views/pages/index/_main_content.html.erb:10
+  Rendered posts/post/_home_page.html.erb (Duration: 0.2ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.3ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.2ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 37)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered collection of posts/_post.html.erb [8 times] (Duration: 5.4ms | Allocations: 1426)
+  Rendered shared/_empty_partial.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "categories" ON "categories"."id" = "posts"."category_id" WHERE "categories"."branch" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["branch", "team"], ["LIMIT", 8]]
+  ↳ app/views/pages/index/_main_content.html.erb:16
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 6], ["id", 5], ["id", 9], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/pages/index/_main_content.html.erb:16
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.2ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered collection of posts/_post.html.erb [8 times] (Duration: 4.0ms | Allocations: 1431)
+  Rendered shared/_empty_partial.html.erb (Duration: 0.0ms | Allocations: 7)
+  Rendered pages/index/_main_content.html.erb (Duration: 75.8ms | Allocations: 19121)
+  Rendered pages/index.html.erb within layouts/application (Duration: 82.4ms | Allocations: 20403)
+  Rendered layouts/navigation/_header.html.erb (Duration: 0.7ms | Allocations: 126)
+  Rendered layouts/navigation/collapsible_elements/_non_signed_in_links.html.erb (Duration: 0.5ms | Allocations: 160)
+  Rendered layouts/navigation/_collapsible_elements.html.erb (Duration: 1.7ms | Allocations: 494)
+  Rendered layouts/_navigation.html.erb (Duration: 5.9ms | Allocations: 1021)
+  Rendered layout layouts/application.html.erb (Duration: 125.5ms | Allocations: 44583)
+Completed 200 OK in 139ms (Views: 114.3ms | ActiveRecord: 14.8ms | Allocations: 48833)
+
+
+Started GET "/posts/study" for 127.0.0.1 at 2024-02-23 06:52:51 +0200
+Processing by PostsController#study as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/study.html.erb within layouts/application
+  Rendered posts/_modal.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered posts/branch/create_new_post/_not_signed_in.html.erb (Duration: 0.6ms | Allocations: 180)
+  Rendered posts/branch/_create_new_post.html.erb (Duration: 1.9ms | Allocations: 713)
+  Rendered shared/_empty_partial.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered posts/branch/_search_form.html.erb (Duration: 1.3ms | Allocations: 338)
+  Rendered posts/branch/categories/_all_selected.html.erb (Duration: 2.0ms | Allocations: 144)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."branch" = $1[0m  [["branch", "study"]]
+  ↳ app/views/posts/branch/_categories.html.erb:7
+  Rendered posts/branch/_categories.html.erb (Duration: 11.7ms | Allocations: 2900)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "categories" ON "categories"."id" = "posts"."category_id" WHERE "categories"."branch" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["branch", "study"], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/posts/_branch.html.erb:19
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8)[0m  [["id", 8], ["id", 2], ["id", 9], ["id", 4], ["id", 7], ["id", 6], ["id", 3], ["id", 5]]
+  ↳ app/views/posts/_branch.html.erb:19
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.8ms | Allocations: 255)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered collection of posts/_post.html.erb [30 times] (Duration: 10.8ms | Allocations: 5323)
+  Rendered posts/_branch.html.erb (Duration: 42.1ms | Allocations: 13655)
+  Rendered posts/study.html.erb within layouts/application (Duration: 43.6ms | Allocations: 13992)
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | Allocations: 14084)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.8ms | Allocations: 15093)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    17:   <div class="row">
+    18:         <div class="col-sm-12" id="feed">
+    19:         <%= render @posts %>
+    20:         <%= render no_posts_partial_path %>		
+    21:         </div>
+    22:   </div><!-- row -->	
+    23: 
+  
+app/helpers/posts_helper.rb:18:in `no_posts_partial_path'
+app/views/posts/_branch.html.erb:20
+app/views/posts/study.html.erb:2
+Started GET "/posts/study" for 127.0.0.1 at 2024-02-23 06:53:31 +0200
+Processing by PostsController#study as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/study.html.erb within layouts/application
+  Rendered posts/_modal.html.erb (Duration: 0.5ms | Allocations: 119)
+  Rendered posts/branch/create_new_post/_not_signed_in.html.erb (Duration: 0.7ms | Allocations: 184)
+  Rendered posts/branch/_create_new_post.html.erb (Duration: 2.4ms | Allocations: 732)
+  Rendered shared/_empty_partial.html.erb (Duration: 0.6ms | Allocations: 80)
+  Rendered posts/branch/_search_form.html.erb (Duration: 2.9ms | Allocations: 474)
+  Rendered posts/branch/categories/_all_selected.html.erb (Duration: 1.4ms | Allocations: 144)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."branch" = $1[0m  [["branch", "study"]]
+  ↳ app/views/posts/branch/_categories.html.erb:7
+  Rendered posts/branch/_categories.html.erb (Duration: 15.5ms | Allocations: 3070)
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "categories" ON "categories"."id" = "posts"."category_id" WHERE "categories"."branch" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["branch", "study"], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/posts/_branch.html.erb:19
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8)[0m  [["id", 8], ["id", 2], ["id", 9], ["id", 4], ["id", 7], ["id", 6], ["id", 3], ["id", 5]]
+  ↳ app/views/posts/_branch.html.erb:19
+  Rendered posts/post/_branch_page.html.erb (Duration: 1.7ms | Allocations: 263)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 1.2ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.4ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.4ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.5ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.4ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.5ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.6ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.4ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.4ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.6ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.5ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.9ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.5ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.4ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.5ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.6ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.4ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 3.6ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered collection of posts/_post.html.erb [30 times] (Duration: 71.2ms | Allocations: 5502)
+  Rendered posts/_branch.html.erb (Duration: 145.2ms | Allocations: 21373)
+  Rendered posts/study.html.erb within layouts/application (Duration: 147.7ms | Allocations: 21878)
+  Rendered layout layouts/application.html.erb (Duration: 148.1ms | Allocations: 21970)
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 14.9ms | Allocations: 26288)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    17:   <div class="row">
+    18:         <div class="col-sm-12" id="feed">
+    19:         <%= render @posts %>
+    20:         <%= render no_posts_partial_path %>		
+    21:         </div>
+    22:   </div><!-- row -->	
+    23: 
+  
+app/helpers/posts_helper.rb:18:in `no_posts_partial_path'
+app/views/posts/_branch.html.erb:20
+app/views/posts/study.html.erb:2
+Started GET "/posts/study" for 127.0.0.1 at 2024-02-23 06:54:11 +0200
+Processing by PostsController#study as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/study.html.erb within layouts/application
+  Rendered posts/_modal.html.erb (Duration: 1.6ms | Allocations: 119)
+  Rendered posts/branch/create_new_post/_not_signed_in.html.erb (Duration: 0.6ms | Allocations: 184)
+  Rendered posts/branch/_create_new_post.html.erb (Duration: 2.3ms | Allocations: 732)
+  Rendered shared/_empty_partial.html.erb (Duration: 0.4ms | Allocations: 80)
+  Rendered posts/branch/_search_form.html.erb (Duration: 1.8ms | Allocations: 474)
+  Rendered posts/branch/categories/_all_selected.html.erb (Duration: 0.6ms | Allocations: 144)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."branch" = $1[0m  [["branch", "study"]]
+  ↳ app/views/posts/branch/_categories.html.erb:7
+  Rendered posts/branch/_categories.html.erb (Duration: 11.2ms | Allocations: 3070)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "categories" ON "categories"."id" = "posts"."category_id" WHERE "categories"."branch" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["branch", "study"], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/posts/_branch.html.erb:19
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8)[0m  [["id", 8], ["id", 2], ["id", 9], ["id", 4], ["id", 7], ["id", 6], ["id", 3], ["id", 5]]
+  ↳ app/views/posts/_branch.html.erb:19
+  Rendered posts/post/_branch_page.html.erb (Duration: 1.8ms | Allocations: 263)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.4ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.5ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered collection of posts/_post.html.erb [30 times] (Duration: 22.2ms | Allocations: 5502)
+  Rendered shared/_empty_partial.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mPost Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" INNER JOIN "categories" ON "categories"."id" = "posts"."category_id" WHERE "categories"."branch" = $1[0m  [["branch", "study"]]
+  ↳ app/views/posts/_branch.html.erb:25
+  Rendered posts/_branch.html.erb (Duration: 69.9ms | Allocations: 22095)
+  Rendered posts/study.html.erb within layouts/application (Duration: 74.1ms | Allocations: 22600)
+  Rendered layouts/navigation/_header.html.erb (Duration: 0.4ms | Allocations: 126)
+  Rendered layouts/navigation/collapsible_elements/_non_signed_in_links.html.erb (Duration: 0.4ms | Allocations: 159)
+  Rendered layouts/navigation/_collapsible_elements.html.erb (Duration: 1.1ms | Allocations: 425)
+  Rendered layouts/_navigation.html.erb (Duration: 3.2ms | Allocations: 950)
+  Rendered layout layouts/application.html.erb (Duration: 103.6ms | Allocations: 46478)
+Completed 200 OK in 119ms (Views: 96.9ms | ActiveRecord: 10.9ms | Allocations: 50810)
+
+
+Started GET "/posts/hobby" for 127.0.0.1 at 2024-02-23 06:54:30 +0200
+Processing by PostsController#hobby as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/hobby.html.erb within layouts/application
+  Rendered posts/_modal.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered posts/branch/create_new_post/_not_signed_in.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered posts/branch/_create_new_post.html.erb (Duration: 0.9ms | Allocations: 405)
+  Rendered shared/_empty_partial.html.erb (Duration: 0.1ms | Allocations: 7)
+  Rendered posts/branch/_search_form.html.erb (Duration: 0.8ms | Allocations: 129)
+  Rendered posts/branch/categories/_all_selected.html.erb (Duration: 0.1ms | Allocations: 28)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."branch" = $1[0m  [["branch", "hobby"]]
+  ↳ app/views/posts/branch/_categories.html.erb:7
+  Rendered posts/branch/_categories.html.erb (Duration: 6.2ms | Allocations: 922)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "categories" ON "categories"."id" = "posts"."category_id" WHERE "categories"."branch" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["branch", "hobby"], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/posts/_branch.html.erb:19
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8)[0m  [["id", 8], ["id", 6], ["id", 3], ["id", 9], ["id", 2], ["id", 5], ["id", 4], ["id", 7]]
+  ↳ app/views/posts/_branch.html.erb:19
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.5ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered posts/post/_branch_page.html.erb (Duration: 1.9ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered posts/post/_branch_page.html.erb (Duration: 0.3ms | Allocations: 53)
+  Rendered collection of posts/_post.html.erb [30 times] (Duration: 21.4ms | Allocations: 5046)
+  Rendered shared/_empty_partial.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mPost Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" INNER JOIN "categories" ON "categories"."id" = "posts"."category_id" WHERE "categories"."branch" = $1[0m  [["branch", "hobby"]]
+  ↳ app/views/posts/_branch.html.erb:25
+  Rendered posts/_branch.html.erb (Duration: 53.3ms | Allocations: 10405)
+  Rendered posts/hobby.html.erb within layouts/application (Duration: 54.2ms | Allocations: 10663)
+  Rendered layouts/navigation/_header.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/navigation/collapsible_elements/_non_signed_in_links.html.erb (Duration: 2.3ms | Allocations: 40)
+  Rendered layouts/navigation/_collapsible_elements.html.erb (Duration: 2.6ms | Allocations: 131)
+  Rendered layouts/_navigation.html.erb (Duration: 2.9ms | Allocations: 266)
+  Rendered layout layouts/application.html.erb (Duration: 112.9ms | Allocations: 16750)
+Completed 200 OK in 115ms (Views: 112.6ms | ActiveRecord: 2.0ms | Allocations: 17305)
+
+
+Started GET "/" for 127.0.0.1 at 2024-02-23 06:57:25 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered posts/_modal.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered pages/index/side_menu/_no_login_required_links.html.erb (Duration: 0.6ms | Allocations: 361)
+  Rendered pages/index/_side_menu.html.erb (Duration: 1.1ms | Allocations: 605)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "categories" ON "categories"."id" = "posts"."category_id" WHERE "categories"."branch" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["branch", "hobby"], ["LIMIT", 8]]
+  ↳ app/views/pages/index/_main_content.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 8], ["id", 6], ["id", 3], ["id", 9]]
+  ↳ app/views/pages/index/_main_content.html.erb:4
+  Rendered posts/post/_home_page.html.erb (Duration: 0.7ms | Allocations: 183)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered collection of posts/_post.html.erb [8 times] (Duration: 4.9ms | Allocations: 1641)
+  Rendered shared/_empty_partial.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "categories" ON "categories"."id" = "posts"."category_id" WHERE "categories"."branch" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["branch", "study"], ["LIMIT", 8]]
+  ↳ app/views/pages/index/_main_content.html.erb:10
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4, $5)[0m  [["id", 8], ["id", 2], ["id", 9], ["id", 4], ["id", 7]]
+  ↳ app/views/pages/index/_main_content.html.erb:10
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.2ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.2ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.5ms | Allocations: 37)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered collection of posts/_post.html.erb [8 times] (Duration: 6.9ms | Allocations: 1426)
+  Rendered shared/_empty_partial.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "categories" ON "categories"."id" = "posts"."category_id" WHERE "categories"."branch" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["branch", "team"], ["LIMIT", 8]]
+  ↳ app/views/pages/index/_main_content.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 6], ["id", 5], ["id", 9], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/pages/index/_main_content.html.erb:16
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered posts/post/_home_page.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered collection of posts/_post.html.erb [8 times] (Duration: 3.6ms | Allocations: 1431)
+  Rendered shared/_empty_partial.html.erb (Duration: 0.0ms | Allocations: 7)
+  Rendered pages/index/_main_content.html.erb (Duration: 39.3ms | Allocations: 11224)
+  Rendered pages/index.html.erb within layouts/application (Duration: 43.2ms | Allocations: 12334)
+  Rendered layouts/navigation/_header.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/navigation/collapsible_elements/_non_signed_in_links.html.erb (Duration: 0.1ms | Allocations: 45)
+  Rendered layouts/navigation/_collapsible_elements.html.erb (Duration: 0.4ms | Allocations: 188)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 53.8ms | Allocations: 18790)
+Completed 200 OK in 59ms (Views: 52.4ms | ActiveRecord: 3.9ms | Allocations: 19776)
+
+
