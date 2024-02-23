@@ -18,6 +18,8 @@ module Forum
 
     config.action_controller.include_all_helpers = false
     config.autoload_paths += %W(#{config.root}/app/helpers/subdirectory)
+
+    config.autoload_paths += %W(#{config.root}/app/services)
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

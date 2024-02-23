@@ -19,4 +19,4 @@ class PostsForBranchService
       end
     end
   
-  end
+end
