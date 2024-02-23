@@ -27899,3 +27899,54 @@ app/helpers/application_helper.rb:4:in `<module:ApplicationHelper>'
 app/helpers/application_helper.rb:1:in `<main>'
 app/controllers/application_controller.rb:1:in `<main>'
 app/controllers/posts_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2024-02-23 18:59:10 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NoMethodError (undefined method `context' for Private::ConversationsHelper:Module):
+  
+app/helpers/private/conversations_helper.rb:17:in `<module:ConversationsHelper>'
+app/helpers/private/conversations_helper.rb:1:in `<main>'
+app/helpers/application_helper.rb:4:in `<module:ApplicationHelper>'
+app/helpers/application_helper.rb:1:in `<main>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2024-02-23 19:14:13 +0200
+  
+NoMethodError (undefined method `context' for Private::ConversationsHelper:Module):
+  
+app/helpers/private/conversations_helper.rb:17:in `<module:ConversationsHelper>'
+app/helpers/private/conversations_helper.rb:1:in `<main>'
+app/helpers/application_helper.rb:4:in `<module:ApplicationHelper>'
+app/helpers/application_helper.rb:1:in `<main>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2024-02-23 19:14:35 +0200
+  
+NoMethodError (undefined method `context' for Private::ConversationsHelper:Module):
+  
+app/helpers/private/conversations_helper.rb:17:in `<module:ConversationsHelper>'
+app/helpers/private/conversations_helper.rb:1:in `<main>'
+app/helpers/application_helper.rb:4:in `<module:ApplicationHelper>'
+app/helpers/application_helper.rb:1:in `<main>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2024-02-23 19:14:45 +0200
+  
+NoMethodError (undefined method `context' for Private::ConversationsHelper:Module):
+  
+app/helpers/private/conversations_helper.rb:17:in `<module:ConversationsHelper>'
+app/helpers/private/conversations_helper.rb:1:in `<main>'
+app/helpers/application_helper.rb:4:in `<module:ApplicationHelper>'
+app/helpers/application_helper.rb:1:in `<main>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2024-02-23 19:15:05 +0200
+  
+NoMethodError (undefined method `context' for Private::ConversationsHelper:Module):
+  
+app/helpers/private/conversations_helper.rb:17:in `<module:ConversationsHelper>'
+app/helpers/private/conversations_helper.rb:1:in `<main>'
+app/helpers/application_helper.rb:4:in `<module:ApplicationHelper>'
+app/helpers/application_helper.rb:1:in `<main>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
