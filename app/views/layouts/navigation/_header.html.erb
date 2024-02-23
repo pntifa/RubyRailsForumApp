@@ -1,33 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Crertal</title>
-    <style>
-        h1, h2, h3 {
-            font-family: 'Roboto', sans-serif;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        h1 {
-            font-size: 24px;
-            margin: 0;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-    </style>
-</head>
-
-        
+<div class="navbar-header">
+  <% nav_header_content_partials.each do |partial_path| %>
+    <%= render partial: partial_path %>
+  <% end %>
+</div><!-- navbar-header -->

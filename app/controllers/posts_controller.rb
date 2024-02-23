@@ -2,10 +2,8 @@ class PostsController < ApplicationController
   before_action :redirect_if_not_signed_in, only: [:new]
 
     def show
-      @post = Post.find(params[:id])
-      if user_signed_in?
-        @message_has_been_sent = conversation_exist?
-      end
+       @post = Post.find_by(id: params[:id].to_i)
+
     end
 
     def get_posts
@@ -61,6 +59,7 @@ class PostsController < ApplicationController
       @branch = params[:branch]
       @categories = Category.where(branch: @branch)
       @post = Post.new
+      @user = User.new
     end
   
     def create
@@ -70,6 +69,11 @@ class PostsController < ApplicationController
       else
         redirect_to root_path
       end
+    end
+
+    def post_format_partial_path
+      # Your logic to determine the path
+      'posts/formats/default'
     end
 
 
