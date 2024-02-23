@@ -6,4 +6,24 @@
     #side-menu {
       display: none !important;
     }
+
+    .solid-color-mode, .border-color-mode {
+      .post-text {
+        font-size: 16px;  
+      }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .solid-color-mode, .border-color-mode {
+      .post-text {
+        font-size: 16px;  
+      }
+    }
+}
+
+@media only screen and (min-width:767px) and (max-width: 1000px) {
+  .container {
+     width: 100% !important;
   }
+}

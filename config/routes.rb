@@ -15,7 +15,8 @@ Rails.application.routes.draw do
     get 'signup', to: 'devise/registrations#new'
   end
 
-  resources :posts do
+  
+  resources :posts, only: [:show] do
     collection do
       get 'hobby'
       get 'study'
