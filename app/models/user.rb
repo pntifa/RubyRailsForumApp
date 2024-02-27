@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
@@ -32,18 +30,15 @@ class User < ApplicationRecord
   has_and_belongs_to_many :group_conversations, class_name: 'Group::Conversation'
           
           
-# gets all your contacts
-    def all_active_contacts
-      accepted_sent_contact_requests | accepted_received_contact_requests
-    end
+  def all_active_contacts
+    accepted_sent_contact_requests | accepted_received_contact_requests
+  end
           
-    # gets your pending sent and received contacts
-    def pending_contacts
-      pending_sent_contact_requests | pending_received_contact_requests
-    end
+  def pending_contacts
+    pending_sent_contact_requests | pending_received_contact_requests
+  end
           
-    # gets a Contact record
-    def contact(contact)
-      Contact.where(user_id: self.id, contact_id: contact.id)[0]
-    end
+  def contact(contact)
+    Contact.where(user_id: self.id, contact_id: contact.id)[0]
+  end
 end

@@ -6,9 +6,9 @@ class MessengersController < ApplicationController
     end
   
     def get_private_conversation
-        conversation = Private::Conversation.between_users(current_user.id, params[:id])
-        @conversation = conversation[0]
-        respond_to do |format|
+      conversation = Private::Conversation.between_users(current_user.id, params[:id])
+      @conversation = conversation[0]
+      respond_to do |format|
         format.js { render 'get_private_conversation'}
       end
     end
@@ -27,13 +27,13 @@ class MessengersController < ApplicationController
   
     private
   
-      def get_conversation
-        ConversationForMessengerService.new({
-            conversation_type: params[:type],
-            user1_id: current_user.id,
-            user2_id: params[:id],
-            group_conversation_id: params[:group_conversation_id]
-          }).call
-      end
+    def get_conversation
+      ConversationForMessengerService.new({
+                                            conversation_type: params[:type],
+                                            user1_id: current_user.id,
+                                            user2_id: params[:id],
+                                            group_conversation_id: params[:group_conversation_id]
+                                          }).call
+    end
     
 end

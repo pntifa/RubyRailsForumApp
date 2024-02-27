@@ -8,7 +8,6 @@ module NavigationHelper
       end
     end
     
-    # render the navigation header's content
     def nav_header_content_partials
       partials = []
       if params[:controller] == 'messengers' 
@@ -21,9 +20,6 @@ module NavigationHelper
       partials
     end
 
-
-
-    # return a conversation header partial's path
     def conversation_header_partial_path(conversation)
       if conversation.class == Private::Conversation
         'layouts/navigation/header/dropdowns/conversations/private_conversation'
