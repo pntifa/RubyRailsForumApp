@@ -100,9 +100,11 @@ textarea {
     max-height: 300px;
     overflow-y: auto;
     overflow-x: hidden;
+
     ul {
       padding: 0;
     }
+
   }
   
   .message-received, .message-sent {
@@ -137,6 +139,7 @@ textarea {
     line-height: 1px; 
     line-height: 0.1rem;
     margin: 20px 0 20px;
+
     span {
       background: #fff; 
       padding: 0 10px; 
@@ -161,12 +164,15 @@ textarea {
 
   .add-user-to-contacts {
     display: none;
+
     i {
       opacity: 0.8;
+
       &:hover {
         opacity: 1;
       }
     }
+
     &:hover {
       color: white;
     }
@@ -181,10 +187,12 @@ textarea {
     display: none;
     margin: 0;
     padding: 0;
+    
     div {
       width: 40px;
       height: 40px;
       display: table;
+
       i {
         display: table-cell;
         text-align: center;
@@ -194,10 +202,12 @@ textarea {
   }
   
   .add-people-to-chat {
+
     i {
       opacity: 0.8;
       transition: opacity 0.15s;
     }
+
     &:hover i {
       opacity: 1;
     }
@@ -211,26 +221,32 @@ textarea {
     text-align: center;
     background-color: white;
     z-index: 2;
+
     .pending-request {
       padding: 10px 0;
     }
+
     .request-response {
       padding: 10px 0;
     }
+
     .accept-request, .decline-request {
       a {
         padding: 10px 0;
       }
     }
+
     .contact-name {
       padding: 10px 0 0 0;
     }
+
     .accept-request {
       margin-right: 10px;
       a {
         color: green;
       }
     }
+
     .decline-request {
       a {
         font-weight: bold;
@@ -274,9 +290,11 @@ textarea {
     padding: 0 10px;
     word-wrap: break-word;
     z-index: 1;
+
     .row {
       position: relative;
     }
+
     .hidden-item {
       position: absolute; 
       left: 0; 
@@ -284,27 +302,34 @@ textarea {
       line-height: 20px;
       visibility: hidden;
     }
+    
     .message-content {
       margin-left: 40px;
     }
+
     &:hover {
       background-color: rgb(250, 250, 250);
     }
+
     p {
       margin: 0;
     }
+
     .message-author, .message-time {
       font-size: 12px;
       font-size: 1.2rem;
     }
+
     .message-author {
       margin-left: 40px;
       font-weight: bold;
     }
+
     .message-time {
       padding-left: 2px;
       color: rgba(0,0,0,0.5);
     }
+    
     &:hover .message-time {
       visibility: visible;
     }

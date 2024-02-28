@@ -9,7 +9,16 @@ class Private::ConversationChannel < ApplicationCable::Channel
 
   def send_message(data)
     message_params = data['message'].each_with_object({}) do |el, hash|
-      hash[el['name']] = el['value']
+      hash[el['fullname']] = el['value']
     end
     Private::Message.create(message_params)
-  endend
+  end
+
+  def set_as_seen(data)
+    conversation = Private::Conversation.find(data["conv_id"].to_i)
+    message = conversation.messages.where(seen: false)
+    messages.each do |message|
+      message.update(seen: true)
+    end
+  end
+end

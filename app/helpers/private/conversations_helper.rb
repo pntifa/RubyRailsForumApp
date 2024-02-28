@@ -1,4 +1,5 @@
 module Private::ConversationsHelper
+    require_relative '../shared/conversations_helper'
     include Shared::ConversationsHelper
 
     def private_conv_recipient(conversation)
@@ -13,24 +14,11 @@ module Private::ConversationsHelper
         end 
     end
 
-
     def add_to_contacts_partial_path(contact)
-        helper.stub(:recipient_is_contact?).and_return(true) if contact.present?
-            
-        if helper.recipient_is_contact?
+        if recipient_is_contact?
             'shared/empty_partial'
         else
-
-        helper.stub(:unaccepted_contact_exists).and_return(false)
-            'private/conversations/conversation/heading/add_user_to_contacts'
-        end
-
-        it "returns an empty partial's path" do
-            expect(add_to_contacts_partial_path(contact)).to eq('shared/empty_partial')
-        end
-
-        it "returns add_user_to_contacts partial's path" do
-            expect(add_to_contacts_partial_path(contact)).to eq('private/conversations/conversation/heading/add_user_to_contacts')
+            non_contact(contact)
         end
     end
 
@@ -42,56 +30,6 @@ module Private::ConversationsHelper
         end
     end
 
-    def get_contact_record(recipient)
-        contact = Contact.find_by_users(current_user.id, recipient.id)
-    end
-
-    private
-
-    def unaccepted_contact_exists
-        it 'returns false' do
-            contact = create(:contact, accepted: true)
-            expect(helper.instance_eval {
-                unaccepted_contact_exists(contact)
-            }).to eq false
-        end
-
-        it 'returns false' do
-            contact = nil
-            expect(helper.instance_eval {
-                unaccepted_contact_exists(contact)
-            }).to eq false
-        end
-
-        it 'returns true' do
-            contact = create(:contact, accepted: false)
-            expect(helper.instance_eval {
-                unaccepted_contact_exists(contact)
-            }).to eq true
-        end
-    end
-
-    def recipient_is_contact?
-        it 'returns false' do
-            helper.stub(:current_user).and_return(current_user)
-            assign(:recipient, recipient)
-            create_list(:contact, 2, user_id: current_user.id, accepted: true)
-            expect(helper.instance_eval { recipient_is_contact? }).to eq false
-        end
-
-        it 'returns true' do
-            helper.stub(:current_user).and_return(current_user)
-            assign(:recipient, recipient)
-            create_list(:contact, 2, user_id: current_user.id, accepted: true)
-            create(:contact, 
-                    user_id: current_user.id, 
-                    contact_id: recipient.id, 
-                    accepted: true)
-            expect(helper.instance_eval { recipient_is_contact? }).to eq true
-        end
-    end
-
-        
     def unaccepted_contact_request_partial_path(contact)
         if unaccepted_contact_exists(contact) 
             if request_sent_by_user(contact)
@@ -99,12 +37,11 @@ module Private::ConversationsHelper
             else
                 "private/conversations/conversation/request_status/sent_by_recipient" 
             end
-            else
+        else
             'shared/empty_partial'
-            end
         end
     end
-        
+
     def not_contact_no_request_partial_path(contact)
         if recipient_is_contact? == false && unaccepted_contact_exists(contact) == false
             "private/conversations/conversation/request_status/send_request"
@@ -112,10 +49,50 @@ module Private::ConversationsHelper
             'shared/empty_partial'
         end
     end
+
+    def contacts_except_recipient(recipient)
+        contacts = current_user.all_active_contacts
+        contacts.delete_if {|contact| contact.id == recipient.id}
+    end
+
+    def create_group_conv_partial_path
+        if recipient_is_contact?
+            'private/conversations/conversation/heading/create_group_conversation'
+        else
+            'shared/empty_partial'
+        end
+    end
+    
+    def get_contact_record(recipient)
+        contact = Contact.find_by_users(current_user.id, recipient.id)
+    end
+
+    private
+
+    def unaccepted_contact_exists(contact)
+       if contact.present?
+            contact.accepted ? false : true
+       else
+        false
+       end
+    end
+
+    def recipient_is_contact?
+        contacts = current_user.all_active_contacts
+        contacts.find { |contact| contact['id'] == @recipient.id}.present?
+    end
+
+    def non_contact(contact)
+        if unaccepted_contact_exists(contact)
+            'shared/empty_partial'
+        else
+            'private/conversations/conversation/heading/add_user_to_contacts'
+        end
+    end
         
     def request_sent_by_user(contact)
         contact['user_id'] == current_user.id
     end
-
+end
 
 

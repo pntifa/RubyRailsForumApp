@@ -7,6 +7,7 @@
     border-bottom-right-radius: 10%;
     transition: border-color 0.1s;
     overflow: hidden;
+
     &:hover {
       cursor: pointer;
     }
@@ -17,9 +18,11 @@
     text-align: center;
     background-color: white !important;
     font-weight: bold;
+
     a {
       color: black;
     }
+
     a:hover {
       text-decoration: underline;
     }
@@ -33,6 +36,7 @@
   .category-item {
     display: inline-block;
     margin: 15px 0;
+
     a {
       font-size: 16px;
       font-size: 1.6rem;
@@ -41,6 +45,7 @@
       border-radius: 8%;
       padding: 10px;
     }
+
     a:hover, .selected-item {
       background: $navbarColor;
       color: white;
@@ -66,6 +71,7 @@
     font-weight: bold;
     border: solid 2px $navbarColor;
     margin: 10px 0;
+
     &:hover, &:active, &:focus {
       background: white;
       color: black;
@@ -79,18 +85,10 @@
   .login-button-branch {
     padding: 5px 10px;
     border-radius: 10px;
+
     &:hover, &:active, &:visited, &:link {
-      color: white;
+      color: blue;
     }
-  }
-  
-  #branch-main-content {
-    background: white;
-    height: calc(100vh - 50px);
-  }
-  
-  #feed {
-    background-color: white;
   }
 
   .fa-search {
@@ -103,15 +101,18 @@
   
   #search-form {
     position:relative;
+
     input {
       border: solid 2px rgba(0,0,0,0.2);
       border-radius: 10px;
       box-shadow: none;
       outline: 0;
     }
+
     input:focus {
       border: solid 2px rgba(0,0,0,0.35);
     }
+
     input#search {
       padding: 15px;
       width: 100%;
@@ -131,6 +132,7 @@
     color: white;
     border-radius: 10px;
     margin-top: 10px;
+
     &:hover {
       background-color: black;
       color: white;
