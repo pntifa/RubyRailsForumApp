@@ -1,5 +1,5 @@
 context '#load_private_messages' do
-  let(:conversation) { create(:private_conversation) }
+let(:conversation) { create(:private_conversation) }
 
     it "returns load_messages partial's path" do
         create(:private_message, conversation_id: conversation.id)

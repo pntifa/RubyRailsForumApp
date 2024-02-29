@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   devise_scope :user do
-    get 'sign_out', to: 'devise/sessions#destroy'
+    get 'signout', to: 'devise/sessions#destroy'
   end
 
   resources :posts do

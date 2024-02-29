@@ -45,10 +45,4 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
-  def sign_out
-    sign_out(current_user)
-    redirect_to root_path, notice: "Successfully signed out!"
-  end
-
 end
