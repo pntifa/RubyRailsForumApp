@@ -4,7 +4,7 @@ body {
 
 nav {
   .col-sm-5, .col-sm-7 {
-    padding: 0;
+    padding-top: 0px;
   }
 
   .navbar-header {
@@ -12,11 +12,11 @@ nav {
 
       button, .navbar-brand {
         transition: opacity 0.15s;
-        margin-top: 60px;
+        margin-top: 0.5px;
       }
 
       button {
-        margin-right: 0;
+        margin-right: 10;
       }
 
       button:hover, .navbar-brand:hover {
@@ -32,13 +32,13 @@ nav {
     a {
       color: white !important;
     }
-  }
+}
 
-  .pc-menu {
+.pc-menu {
     margin-right: 10px;
-  }
+}
   
-  .mobile-menu {
+.mobile-menu {
     i {
       color: white;
     }
@@ -59,52 +59,52 @@ nav {
         color: black;
       }
     }
-  }
+}
   
-  .icon-bar {
+.icon-bar {
     background-color: white !important;
-  }
+}
   
-  .active a {
+.active a {
     background: $navbarColor !important;
     border-bottom: solid 5px white;
-  }
+}
   
-  .dropdown-toggle, .dropdown-menu {
+.dropdown-toggle, .dropdown-menu {
     background: $navbarColor !important;
-    border: none;
-  }
+    border-style: hidden;
+}
   
-  .dropdown-menu a:hover {
+.dropdown-menu a:hover {
     color: black !important;
     background: white !important;
-  }
+}
 
-  .brand-mobile {
+.brand-mobile {
     font-size: 20px;
-  }
+}
   
-  .navigation-items {
+.navigation-items {
     position: absolute;
     top: 0;
     left: 50%;
-  }
+}
   
-  .navbar-header {
+.navbar-header {
     .open {
       width: 36px;
     }
-  }
+}
   
-  .non-user-nav-links {
+.non-user-nav-links {
     display: inline-block;
     height: 50px;
     line-height: 50px;
     vertical-align: middle;
     padding-right: 20px;
-  }
+}
   
-  #conversations-menu, #contacts-requests {
+#conversations-menu, #contacts-requests {
     font-size: 20px;
     font-size: 2.0rem;
     height: 50px;
@@ -133,28 +133,28 @@ nav {
         color: black !important;
       }
     }
-  }
+}
   
-  #unseen-conversations, #unresponded-contact-requests {
+#unseen-conversations, #unresponded-contact-requests {
     visibility: hidden;
     padding: 1px;
     position: absolute;
     // color: white;
     font-size: 13px;
-  }
+}
   
-  #unseen-conversations {
+#unseen-conversations {
     right: 5px;
     background: #E92F2F;
-  }
+}
   
-  #conversations-menu {
+#conversations-menu {
     i {
       position: relative;
     }
-  }
+}
   
-  #conversations-list {
+#conversations-list {
     position: fixed;
     bottom: 0;
     right: 0;
@@ -163,9 +163,9 @@ nav {
     .col-sm-2 {
       padding: 0;
     }
-  }
+}
 
-  #contacts-requests {
+#contacts-requests {
     li {
       color: black;
       background-color: $backgroundColor;
@@ -241,11 +241,11 @@ nav {
       text-align: center;
     }
     
-  }
+}
   
-  #unresponded-contact-requests {
+#unresponded-contact-requests {
     top: 0;
     right: 5px;
     background: #3F4EBF;
-  }
+}
 

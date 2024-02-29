@@ -1,6 +1,6 @@
 .single-post-card {
-    min-height: 135px;
-    max-height: 135px;
+    min-height: 220px;
+    max-height: 220px;
     box-shadow: 1px 1px 4px rgba(0,0,0, 0.3);
     color: black;
     padding: 10px;
@@ -17,14 +17,14 @@
 
     &:hover {
       cursor: pointer;
-      background: white;
+      background: rgb(165, 173, 212);
       box-shadow: none;
       border-radius: 1%;
     }
 }
   
 .post-content {
-    display: none;
+    display: inline-flexbox;
 }
 
 .solid-color-mode, .border-color-mode {
@@ -35,7 +35,7 @@
   
 .solid-color-mode {
     .post-text {
-      padding: 10px;
+      padding: 0px;
       background-color: white;
       border-radius: 25px;
     }

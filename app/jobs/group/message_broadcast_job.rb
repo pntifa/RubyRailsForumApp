@@ -2,7 +2,6 @@ class Group::MessageBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(message, previous_message, current_user)
-    # broadcast message to all conversation's participants
     conversation_id = message.conversation_id
     ActionCable.server.broadcast(
       "group_conversation_#{conversation_id}",

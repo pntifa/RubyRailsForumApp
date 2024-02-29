@@ -20,7 +20,7 @@ class Group::AddUserToConversationService
     def create_info_message(new_user, added_by)
       message = Group::Message.new(
         user_id: added_by.id, 
-        content: '' + new_user.name + ' added by ' + added_by.name, 
+        content: '' + new_user.fullname + ' added by ' + added_by.fullname, 
         added_new_users: [new_user.id], 
         group_conversation_id: @group_conversation_id)
       if message.save

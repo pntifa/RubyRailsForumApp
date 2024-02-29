@@ -17,13 +17,10 @@ class Group::NewConversationService
                                     new_user_to_chat.fullame 
       if new_group_conversation.save
         arr_of_users_ids = [creator.id, pchat_opposed_user.id, new_user_to_chat.id]
-        # add users to the conversation
         creator.group_conversations << new_group_conversation
         pchat_opposed_user.group_conversations << new_group_conversation
         new_user_to_chat.group_conversations << new_group_conversation
-        # create an initial message with an information about the conversation
         create_initial_message(creator, arr_of_users_ids, new_group_conversation)
-        # return the conversation
         new_group_conversation
       end
     end
@@ -33,7 +30,7 @@ class Group::NewConversationService
     def create_initial_message(creator, arr_of_users_ids, new_group_conversation)
       message = Group::Message.create(
         user_id: creator.id, 
-        content: 'Conversation created by ' + creator.name, 
+        content: 'Conversation created by ' + creator.fullname, 
         added_new_users: arr_of_users_ids , 
         conversation_id: new_group_conversation.id
       )
